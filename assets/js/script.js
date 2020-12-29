@@ -3,7 +3,11 @@ var score = 0; // Score tracker
 var startQuizBtnEl = document.getElementById('start-quiz'); // Start Quiz button El
 var questionsEl = document.getElementById('questions'); // Questions for the main Div
 var mainDivEl = document.getElementById('mainDiv'); // Main div container for all elements except for header elements
-var tmlTimeLeft = document.getElementById('timeLeft'); // Display counter @ the html level.
+var htmlTimeLeft = document.getElementById('timeLeft'); // Display counter @ the html level.
+var questionDisplayEl = document.createElement("questionDisplay"); // Display Question
+var button1234 = document.createElement("button"); // Test answer 1
+var timeLeft = 10; // Global time left assignment counter
+
 
 
 
@@ -17,30 +21,31 @@ var questionsObject = { // Object that holds correct answers.
     }
 }
 
-var button1234 = document.createElement("button");
-button1234.textContent = "Edit";
 
-mainDivEl.appendChild(button1234);
+htmlTimeLeft.textContent = timeLeft;
 
-
-
-
-
-buttonEl.addEventListener("click", function() {
+startQuizBtnEl.addEventListener("click", function() {
 //debugger;
-    var timeLeft=5;
+    startQuizBtnEl.style.display = 'none';
+    timeLeft=10;
+    
 
     var timeInterval = setInterval(function() {
         if(timeLeft >= 1) {
-            mainEl.textContent = questionsObject.correct[0];
+            questionDisplayEl.textContent = questionsObject.correct[0];
+            mainDivEl.appendChild(questionDisplayEl);
+            mainDivEl.appendChild(button1234);
+            button1234.textContent = "Edit";
             timeLeft -= 1;
+            htmlTimeLeft.textContent = timeLeft;
             console.log("time left:" + timeLeft)
         }
         else if(timeLeft === 0){
           //timerEl.textContent = "";
           clearInterval(timeInterval);
           console.log("I'm here" + timeInterval);
-          mainEl.textContent = "Game Over!. Try again by clicking on \"Click Start Quiz\"";
+          button1234.style.display = 'none';
+          questionDisplayEl.textContent = "Game Over!. Try again by clicking on \"Click Start Quiz\"";
           //displayMessage();
         }
       }, 1000)
