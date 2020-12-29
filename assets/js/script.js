@@ -1,13 +1,21 @@
 var quizStatus = false; // Know the status of the quiz. Quiz is not running = false , running = true
 var score = 0; // Score tracker
 var startQuizBtnEl = document.getElementById('start-quiz'); // Start Quiz button El
+var answer1BtnEl = document.getElementById('answer1'); // Start Quiz button El
+var answer2BtnEl = document.getElementById('answer2'); // Start Quiz button El
+var answer3BtnEl = document.getElementById('answer3'); // Start Quiz button El
+var answer4BtnEl = document.getElementById('answer4'); // Start Quiz button El
 var questionsEl = document.getElementById('questions'); // Questions for the main Div
 var mainDivEl = document.getElementById('mainDiv'); // Main div container for all elements except for header elements
 var htmlTimeLeft = document.getElementById('timeLeft'); // Display counter @ the html level.
 var questionDisplayEl = document.createElement("questionDisplay"); // Display Question
 var button1234 = document.createElement("button"); // Test answer 1
-var timeLeft = 10; // Global time left assignment counter
+var timeLeft = 5; // Global time left assignment counter
 
+answer1BtnEl.style.display = 'none';
+answer2BtnEl.style.display = 'none';
+answer3BtnEl.style.display = 'none';
+answer4BtnEl.style.display = 'none';
 
 
 
@@ -22,20 +30,32 @@ var questionsObject = { // Object that holds correct answers.
 }
 
 
+
 htmlTimeLeft.textContent = timeLeft;
 
 startQuizBtnEl.addEventListener("click", function() {
 //debugger;
     startQuizBtnEl.style.display = 'none';
-    timeLeft=10;
+    questionDisplay.style.display='none';
+    timeLeft=5;
+    htmlTimeLeft.textContent = timeLeft;
     
 
     var timeInterval = setInterval(function() {
         if(timeLeft >= 1) {
-            questionDisplayEl.textContent = questionsObject.correct[0];
-            mainDivEl.appendChild(questionDisplayEl);
-            mainDivEl.appendChild(button1234);
-            button1234.textContent = "Edit";
+            //questionDisplayEl.textContent = questionsObject.correct[0];
+            //mainDivEl.appendChild(questionDisplayEl);
+            //mainDivEl.appendChild(button1234);
+            //questionDisplay.style.display= "";
+            questionDisplay.textContent = questionsObject.correct[0];
+            questionDisplay.style.display= "";
+            answer1BtnEl.style.display = "";
+            answer2BtnEl.style.display = "";
+            answer3BtnEl.style.display = "";
+            answer4BtnEl.style.display = "";
+            answer1BtnEl.textContent = "Edit";
+            gridContainer.appendChild(questionDisplayEl);
+            gridContainer.appendChild(answer1BtnEl);
             timeLeft -= 1;
             htmlTimeLeft.textContent = timeLeft;
             console.log("time left:" + timeLeft)
@@ -44,8 +64,14 @@ startQuizBtnEl.addEventListener("click", function() {
           //timerEl.textContent = "";
           clearInterval(timeInterval);
           console.log("I'm here" + timeInterval);
-          button1234.style.display = 'none';
-          questionDisplayEl.textContent = "Game Over!. Try again by clicking on \"Click Start Quiz\"";
+          answer1BtnEl.style.display = 'none';
+          answer2BtnEl.style.display = 'none';
+          answer3BtnEl.style.display = 'none';
+          answer4BtnEl.style.display = 'none';
+          questionDisplay.textContent = "Game Over!. Try again by clicking on \"Click Start Quiz\"";
+          startQuizBtnEl.style.display = "";
+          //gridContainer.appendChild(questionDisplayEl);
+    
           //displayMessage();
         }
       }, 1000)
