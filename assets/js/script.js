@@ -1,8 +1,9 @@
 var quizStatus = false; // Know the status of the quiz. Quiz is not running = false , running = true
 var score = 0; // Score tracker
-var buttonEl = window.document.querySelector("#start-quiz");
-var questionsEl = document.getElementById('questions');
-var mainEl = document.getElementById('main');
+var startQuizBtnEl = document.getElementById('start-quiz'); // Start Quiz button El
+var questionsEl = document.getElementById('questions'); // Questions for the main Div
+var mainDivEl = document.getElementById('mainDiv'); // Main div container for all elements except for header elements
+var tmlTimeLeft = document.getElementById('timeLeft'); // Display counter @ the html level.
 
 
 
@@ -16,7 +17,13 @@ var questionsObject = { // Object that holds correct answers.
     }
 }
 
-console.log(questionsObject.correct[0]);
+var button1234 = document.createElement("button");
+button1234.textContent = "Edit";
+
+mainDivEl.appendChild(button1234);
+
+
+
 
 
 buttonEl.addEventListener("click", function() {
