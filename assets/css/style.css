@@ -6,7 +6,7 @@
 
 header {
     display: flex; /* Flex container to display the child elements as flex with space between and wrap */
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     list-style: none;
     background-color: blueviolet;
@@ -18,21 +18,40 @@ header {
 
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     margin-top: 50px;
     background-color: lightblue;
-  
-    
 }
 
+#answerCorrectWrongGrid {
+    /*width:65%; /* Contain the grid to a maximum of 80% of the flex wrapper */
+    display: grid;
+    grid-template-columns: 4fr;  /* Create a 4X4 grid of same size*/
+    grid-template-rows: repeat(2, 1fr); /* 4 rows of equal size */
+    gap: 10px 10px; /* Gap on x and y grid */
+
+}
+
+#answerCorrectWrong {
+    text-align: center;
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 2;
+    border-top: 2px solid blue;
+
+}
+
+
 #gridContainer {
-    width:65%; /* Contain the grid to a maximum of 80% of the flex wrapper */
+    /*width:65%; /* Contain the grid to a maximum of 80% of the flex wrapper */
     display: grid;
     grid-template-columns: repeat(2, 1fr) 2fr 1fr;  /* Create a 4X4 grid of same size*/
     grid-template-rows: repeat(10, 1fr); /* 4 rows of equal size */
     gap: 10px 10px; /* Gap on x and y grid */
 }
+
+
+
 
 #questionDisplay {
     text-align: center;
