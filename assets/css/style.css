@@ -6,12 +6,13 @@
 
 header {
     display: flex; /* Flex container to display the child elements as flex with space between and wrap */
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     list-style: none;
     background-color: blueviolet;
     height: 60px;
   }
+
 
 
 #mainDiv {
@@ -87,5 +88,25 @@ header {
 #answer5 {
     grid-column: 1 / span 2;
     grid-row: 10 / span 1;
+}
+
+#answer1:hover{
+    background-color: yellow;
+  
+}
+
+#answer2:hover{
+    background-color: yellow;
+  
+}
+
+#answer3:hover{
+    background-color: yellow;
+  
+}
+
+#answer4:hover{
+    background-color: yellow;
+  
 }
 
