@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Merienda';font-size: 22px;
+    background-color: white;
 }
 
 header {
@@ -21,6 +22,33 @@ header {
     padding-right: 10px;
     font-family: 'Merienda';font-size: 22px;
   }
+
+.btnHeader {
+    border-radius: 10px;
+    background-color: white;
+    text-decoration: none;
+    border: 0;
+    outline: 0; /* Remove border around button */
+    color: blueviolet;
+    font-family: 'Merienda';font-size: 20px;
+}
+
+.btnHeader:hover {
+
+    background-color: pink;
+    
+  
+    
+}
+
+.btn {
+    border-radius: 12px;
+    border: 0;
+    outline: 0; /* Remove border around button */
+    background-color: purple;
+    color: white;
+    font-family: 'Merienda';font-size: 10px;
+}
 
 
 
@@ -68,7 +96,7 @@ header {
     background-color: purple;
     place-self: center;
     color: white;
-    font-family: 'Merienda';font-size: 20px;
+    font-family: 'Merienda';font-size: 15px;
 }
 
 #answer1 {
@@ -80,7 +108,7 @@ header {
     outline: 0; /* Remove border around button */
     background-color: purple;
     color: white;
-    font-family: 'Merienda';font-size: 20px;
+    font-family: 'Merienda';font-size: 15px;
     margin-left: 25px;
 }
 
@@ -93,7 +121,7 @@ header {
     outline: 0; /* Remove border around button */
     background-color: purple;
     color: white;
-    font-family: 'Merienda';font-size: 20px;
+    font-family: 'Merienda';font-size: 15px;
     margin-left: 25px;
     margin-left: 25px;
 
@@ -108,7 +136,7 @@ header {
     outline: 0; /* Remove border around button */
     background-color: purple;
     color: white;
-    font-family: 'Merienda';font-size: 20px;
+    font-family: 'Merienda';font-size: 15px;
     margin-left: 25px;
 }
 
@@ -121,9 +149,11 @@ header {
     outline: 0; /* Remove border around button */
     background-color: purple;
     color: white;
-    font-family: 'Merienda';font-size: 20px;
+    font-family: 'Merienda';font-size: 15px;
     margin-left: 25px;
 }
+
+
 
 #answer1:hover{
     
@@ -148,6 +178,8 @@ header {
     background-color: pink;
   
 }
+
+
 
 #answerCorrectWrongGrid {
     /*width:65%; /* Contain the grid to a maximum of 80% of the flex wrapper */

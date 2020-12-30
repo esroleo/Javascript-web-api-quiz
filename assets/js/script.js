@@ -2,11 +2,12 @@ var quizStatus = false; // Know the status of the quiz. Quiz is not running = fa
 var questionNumber = 0; // Track the question answered.
 var answerNumber = 0; // Track next answers to show
 var score = 0; // Score tracker
-var startQuizBtnEl = document.getElementById('start-quiz'); // Start Quiz button El
-var answer1BtnEl = document.getElementById('answer1'); // Start Quiz button El
-var answer2BtnEl = document.getElementById('answer2'); // Start Quiz button El
-var answer3BtnEl = document.getElementById('answer3'); // Start Quiz button El
-var answer4BtnEl = document.getElementById('answer4'); // Start Quiz button El
+var viewHighScoresBtnEl = document.getElementById('view-high-scores'); // View High Scores Btn El
+var startQuizBtnEl = document.getElementById('start-quiz'); // Start Quiz button Btn El
+var answer1BtnEl = document.getElementById('answer1'); // Start Quiz button Btn El
+var answer2BtnEl = document.getElementById('answer2'); // Start Quiz button Btn El
+var answer3BtnEl = document.getElementById('answer3'); // Start Quiz button Btn El
+var answer4BtnEl = document.getElementById('answer4'); // Start Quiz button Btn El
 var questionsEl = document.getElementById('questions'); // Questions for the main Div
 var mainDivEl = document.getElementById('mainDiv'); // Main div container for all elements except for header elements
 var htmlTimeLeft = document.getElementById('timeLeft'); // Display counter @ the html level.
@@ -66,6 +67,15 @@ var answersObject = { // Object that holds correct answers.
 
 htmlTimeLeft.textContent = timeLeft;
 
+viewHighScoresBtnEl.addEventListener("click", function() {
+
+window.alert("Clicked");
+});
+
+
+
+
+
 answer1BtnEl.addEventListener("mouseover", function() {
 
     answerCorrectWrong.style.display='none';
@@ -113,6 +123,9 @@ startQuizBtnEl.addEventListener("click", function() {
             answer2BtnEl.style.display = "";
             answer3BtnEl.style.display = "";
             answer4BtnEl.style.display = "";
+
+            //Check if game is over.
+
             
          
             answer1BtnEl.textContent = answersObject.answers[answerNumber][0];
@@ -161,6 +174,8 @@ startQuizBtnEl.addEventListener("click", function() {
                     answerCorrectWrong.style.borderTop = "solid #800080";
                     answerCorrectWrongGrid.appendChild(answerCorrectWrong);
                     //window.alert("Game Over"); Game is over at this point.
+                    questionNumber = 0; // Game is over, no more questions to show.
+                    answerNumber = 0; // Game is over, no more answers to show.
                     console.log("I'm here" + timeInterval);
                     clearInterval(timeInterval);
                     answer1BtnEl.style.display = 'none';
