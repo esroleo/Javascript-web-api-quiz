@@ -139,6 +139,10 @@ startQuizBtnEl.addEventListener("click", function() {
                     answerCorrectWrong.textContent = "Correct!";
                     answerCorrectWrong.style.borderTop = "solid #800080";
                     answerCorrectWrongGrid.appendChild(answerCorrectWrong);
+                } else {
+                    answerCorrectWrong.style.display="";
+                    answerCorrectWrong.textContent = "Wrong!";
+                    answerCorrectWrong.style.borderTop = "solid #800080";
                 }
       
 
@@ -156,7 +160,17 @@ startQuizBtnEl.addEventListener("click", function() {
                     answerCorrectWrong.textContent = "Correct!";
                     answerCorrectWrong.style.borderTop = "solid #800080";
                     answerCorrectWrongGrid.appendChild(answerCorrectWrong);
-                    window.alert("Game Over");
+                    //window.alert("Game Over"); Game is over at this point.
+                    console.log("I'm here" + timeInterval);
+                    clearInterval(timeInterval);
+                    answer1BtnEl.style.display = 'none';
+                    answer2BtnEl.style.display = 'none';
+                    answer3BtnEl.style.display = 'none';
+                    answer4BtnEl.style.display = 'none';
+                    answerCorrectWrong.style.display='none'; // When time is over correct or wrong will go away.
+                    //answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
+                    questionDisplay.textContent = "You have finished the quiz!";
+                    startQuizBtnEl.style.display = "";
                 }
 
                 
@@ -219,9 +233,11 @@ startQuizBtnEl.addEventListener("click", function() {
           answer2BtnEl.style.display = 'none';
           answer3BtnEl.style.display = 'none';
           answer4BtnEl.style.display = 'none';
-          answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
+          answerCorrectWrong.style.display='none'; // When time is over correct or wrong will go away.
+          //answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
           questionDisplay.textContent = "Game Over!. Try again by clicking on \"Click Start Quiz\"";
           startQuizBtnEl.style.display = "";
+          
           //gridContainer.appendChild(questionDisplayEl);
     
           //displayMessage();
