@@ -137,6 +137,7 @@ startQuizBtnEl.addEventListener("click", function() {
                     answerNumber = 4;
                     answerCorrectWrong.style.display="";
                     answerCorrectWrong.textContent = "Correct!";
+                    answerCorrectWrong.style.borderTop = "solid #800080";
                     answerCorrectWrongGrid.appendChild(answerCorrectWrong);
                 }
       
@@ -153,6 +154,7 @@ startQuizBtnEl.addEventListener("click", function() {
                     //game over
                     answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
                     answerCorrectWrong.textContent = "Correct!";
+                    answerCorrectWrong.style.borderTop = "solid #800080";
                     answerCorrectWrongGrid.appendChild(answerCorrectWrong);
                     window.alert("Game Over");
                 }
@@ -170,6 +172,7 @@ startQuizBtnEl.addEventListener("click", function() {
                     answerNumber = 1;
                     answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
                     answerCorrectWrong.textContent = "Correct!";
+                    answerCorrectWrong.style.borderTop = "solid #800080";
                     answerCorrectWrongGrid.appendChild(answerCorrectWrong);
                 }
 
@@ -181,6 +184,7 @@ startQuizBtnEl.addEventListener("click", function() {
                     answerNumber =3;
                     answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
                     answerCorrectWrong.textContent = "Correct!";
+                    answerCorrectWrong.style.borderTop = "solid #800080";
                     answerCorrectWrongGrid.appendChild(answerCorrectWrong);
                 }
 
@@ -199,6 +203,7 @@ startQuizBtnEl.addEventListener("click", function() {
                     answerNumber = 2;
                     answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
                     answerCorrectWrong.textContent = "Correct!"
+                    answerCorrectWrong.style.borderTop = "solid #800080";
                     answerCorrectWrongGrid.appendChild(answerCorrectWrong);
 
                 }
