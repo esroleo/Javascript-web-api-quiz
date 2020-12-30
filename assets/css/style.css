@@ -9,8 +9,12 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
     list-style: none;
-    background-color: blueviolet;
+    color: palevioletred;
     height: 60px;
+    font-size: 2vw;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
 
@@ -92,7 +96,7 @@ header {
 
 #answer1:hover{
     background-color: yellow;
-  
+     
 }
 
 #answer2:hover{
