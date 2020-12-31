@@ -169,13 +169,9 @@ startQuizBtnEl.addEventListener("click", function() {
     questionDisplay.style.display='none';
     finalScoreDisplay.style.display = 'none';
     enterInitials.style.display='none';
-    
-    
-
     score = 0; // Score is 0 again.
-    
     timeLeft=60;
-    htmlTimeLeft.textContent = timeLeft;
+    htmlTimeLeft.textContent = timeLeft; //Counter to display once more to make look smoother.
 
  //debugger;
     
@@ -194,8 +190,7 @@ startQuizBtnEl.addEventListener("click", function() {
             answer4BtnEl.style.display = "";
 
             //Check if game is over.
-
-            
+          
          
             answer1BtnEl.textContent = answersObject.answers[answerNumber][0];
             answer2BtnEl.textContent = answersObject.answers[answerNumber][1];
@@ -261,9 +256,7 @@ startQuizBtnEl.addEventListener("click", function() {
                     finalScoreDisplay.textContent = "Your final score is: " + score;
                     enterInitials.textContent = "Enter initials: "
                     submitScoreEl.style.display = "";
-                    submitScoreEl.textContent = "Submit";
-
-                    
+                    submitScoreEl.textContent = "Submit";                   
                     //Exit the quiz/timer.
                     clearInterval(timeInterval);
                 } else {
@@ -333,9 +326,10 @@ startQuizBtnEl.addEventListener("click", function() {
 
         }
         else if(timeLeft === 0){
-          //timerEl.textContent = "";
-          clearInterval(timeInterval);
+
           console.log("I'm here" + timeInterval);
+          questionNumber = 0; // Reset all questions
+          answerNumber = 0; // Reset all possible answers.
           answer1BtnEl.style.display = 'none';
           answer2BtnEl.style.display = 'none';
           answer3BtnEl.style.display = 'none';
@@ -344,30 +338,11 @@ startQuizBtnEl.addEventListener("click", function() {
           //answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
           questionDisplay.textContent = "Game Over!. Try again by clicking on \"Click Start Quiz\"";
           startQuizBtnEl.style.display = "";
+          clearInterval(timeInterval);
           
           //gridContainer.appendChild(questionDisplayEl);
     
           //displayMessage();
         }
       }, 1000)
-
-    
-
-
-/*
-
-   var countdown = function() {
-        console.log(counter);
-        counter--;
-        if(counter === 0) {
-            quizStatus = false; 
-            console.log("blastoff");
-            clearInterval(startCountDown);
-            return quizStatus        
-        }
-    } 
-    // When button is cliecked we will start the countdown
-    var startCountDown = setInterval(countdown, 1000);
-    */
-
 });
