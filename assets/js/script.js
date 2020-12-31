@@ -20,16 +20,15 @@ var enterInitialsTextAreaEl = document.createElement("enterInitialsTextArea"); /
 var button1234 = document.createElement("button"); // Test answer 1
 var timeLeft = 60; // Global time left assignment counter
 
+
+// Do not display anything that is not ready to be displayed
 answer1BtnEl.style.display = 'none';
 answer2BtnEl.style.display = 'none';
 answer3BtnEl.style.display = 'none';
 answer4BtnEl.style.display = 'none';
 submitScoreEl.style.display = 'none';
-
 answerCorrectWrong.style.display='none';
 enterInitialsTextArea.style.display='none';
-
-
 
 var questionsObject = { // Object that holds correct answers.
     correct: { 
@@ -71,44 +70,27 @@ var answersObject = { // Object that holds correct answers.
     }
 };
 
-
+//Initialize the display timer at default value
 htmlTimeLeft.textContent = timeLeft;
 
 viewHighScoresBtnEl.addEventListener("click", function() { // View high scores
 
-    var name = "";
-    var quizScores = []; //Array of scores
-    var result = 0;
+    var quizUsers = "";
+    var substringTest ="";
+    var highScores = "";
 
-
-
-    
-            for (var i=0; i < localStorage.length; i++){
-                
-                quizScores = localStorage.getItem("esroleoQuiz")
-                quizScores = localStorage.getItem(localStorage.key(i));
-                
-                
-            }
-
-            result = Math.max(...quizScores);
-            console.log(result);
-
-
-            /*for (var a in localStorage) {
-
-                if (!quizScores){
-                    //do nothing
-                } else {
-                    quizScores = localStorage[a];
-                    Math.max(...quizScores);
-                    console.log(quizScores);
-                }
-                
-                //console.log("Max score was done by " + a + ' = ' + localStorage[a]);
-            }
-            */
-
+    for (var i=0; i < localStorage.length; i++) {
+        var checkUserValue = [];
+        
+        quizUsers = localStorage.getItem(localStorage.key(i));
+        substringTest = quizUsers.substring(0,4) 
+        if (substringTest == "quiz") {
+            checkUserValue = quizUsers.split(",");
+            var userName = checkUserValue[0]
+            highScores += "User " + userName.substring(4) + " high score is: " + checkUserValue[1] + "\n";
+       }
+    }
+    window.alert(highScores);
 
 });
 
