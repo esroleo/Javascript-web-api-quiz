@@ -1,4 +1,4 @@
-var quizStatus = false; // Know the status of the quiz. Quiz is not running = false , running = true
+var quizStatus = true; // Know the status of the quiz. Quiz is not running = false , running = true
 var questionNumber = 0; // Track the question answered.
 var answerNumber = 0; // Track next answers to show
 var score = 0; // Score tracker
@@ -8,11 +8,15 @@ var answer1BtnEl = document.getElementById('answer1'); // Start Quiz button Btn 
 var answer2BtnEl = document.getElementById('answer2'); // Start Quiz button Btn El
 var answer3BtnEl = document.getElementById('answer3'); // Start Quiz button Btn El
 var answer4BtnEl = document.getElementById('answer4'); // Start Quiz button Btn El
+var submitScoreEl = document.getElementById('submitScore'); // Start Quiz button Btn El
 var questionsEl = document.getElementById('questions'); // Questions for the main Div
 var mainDivEl = document.getElementById('mainDiv'); // Main div container for all elements except for header elements
 var htmlTimeLeft = document.getElementById('timeLeft'); // Display counter @ the html level.
 var answerCorrectWrong = document.getElementById('answerCorrectWrong'); // Display counter @ the html level.
 var questionDisplayEl = document.createElement("questionDisplay"); // Display Question
+var finalScoreDisplayEl = document.createElement("finalScoreDisplay"); // Display Question
+var enterInitialsEl = document.createElement("enterInitials"); // Enter initials
+var enterInitialsTextAreaEl = document.createElement("enterInitialsTextArea"); // TextArea
 var button1234 = document.createElement("button"); // Test answer 1
 var timeLeft = 60; // Global time left assignment counter
 
@@ -20,7 +24,10 @@ answer1BtnEl.style.display = 'none';
 answer2BtnEl.style.display = 'none';
 answer3BtnEl.style.display = 'none';
 answer4BtnEl.style.display = 'none';
+submitScoreEl.style.display = 'none';
+
 answerCorrectWrong.style.display='none';
+enterInitialsTextArea.style.display='none';
 
 
 
@@ -73,9 +80,6 @@ window.alert("Clicked");
 });
 
 
-
-
-
 answer1BtnEl.addEventListener("mouseover", function() {
 
     answerCorrectWrong.style.display='none';
@@ -100,11 +104,24 @@ answer4BtnEl.addEventListener("mouseover", function() {
 
 });
 
+submitScoreEl.addEventListener("mouseover", function() {
+
+    answerCorrectWrong.style.display='none';
+
+});
+
 startQuizBtnEl.addEventListener("click", function() {
 
 //debugger;
     startQuizBtnEl.style.display = 'none';
     questionDisplay.style.display='none';
+    finalScoreDisplay.style.display = 'none';
+    enterInitials.style.display='none';
+    
+    
+
+    score = 0; // Score is 0 again.
+    
     timeLeft=60;
     htmlTimeLeft.textContent = timeLeft;
 
@@ -135,6 +152,7 @@ startQuizBtnEl.addEventListener("click", function() {
            
             gridContainer.appendChild(questionDisplayEl);
             gridContainer.appendChild(answer1BtnEl);
+            gridContainer.appendChild(finalScoreDisplayEl);
             timeLeft -= 1;
             htmlTimeLeft.textContent = timeLeft;
             console.log("time left:" + timeLeft)
@@ -145,7 +163,7 @@ startQuizBtnEl.addEventListener("click", function() {
                 if (questionDisplay.textContent === "The condition statement if/else is enclosed with the following:" && answer1BtnEl.textContent === "Parentheses") {
                     console.log("Correct");
                    // timeLeft += 1; // Add a second for a correct answer as it will take one second to move to the next question
-                    score += 10; // Give user a 10+ score
+                    score = 20; // Give user a 10+ score
                     questionNumber = 2; // Move to the next question which is the third questions
                     answerNumber = 4;
                     answerCorrectWrong.style.display="";
@@ -166,7 +184,7 @@ startQuizBtnEl.addEventListener("click", function() {
                 if (questionDisplay.textContent === "Strings must be enclosed with:" && answer2BtnEl.textContent === "Curly brackets") {
                     console.log("Correct");
                     //timeLeft += 1; // Add a second for a correct answer as it will take one second to move to the next question
-                    score += 10; // Give user a 10+ score
+                    score = 50; // Give user a 10+ score
                     //questionNumber = 2; // Move to the next question
                     //game over
                     answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
@@ -177,15 +195,25 @@ startQuizBtnEl.addEventListener("click", function() {
                     questionNumber = 0; // Game is over, no more questions to show.
                     answerNumber = 0; // Game is over, no more answers to show.
                     console.log("I'm here" + timeInterval);
-                    clearInterval(timeInterval);
                     answer1BtnEl.style.display = 'none';
                     answer2BtnEl.style.display = 'none';
                     answer3BtnEl.style.display = 'none';
                     answer4BtnEl.style.display = 'none';
                     answerCorrectWrong.style.display='none'; // When time is over correct or wrong will go away.
+                    startQuizBtnEl.style.display = 'none'; // Remove Start Quiz button.
                     //answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
                     questionDisplay.textContent = "You have finished the quiz!";
-                    startQuizBtnEl.style.display = "";
+                    finalScoreDisplay.style.display = ""; // Allow display for final score
+                    enterInitials.style.display = ""; // Display Message Enter initials
+                    enterInitialsTextArea.style.display="";  // Capture user score once submitted is clicked.
+                    finalScoreDisplay.textContent = "Your final score is: " + score;
+                    enterInitials.textContent = "Enter initials: "
+                    submitScoreEl.style.display = "";
+                    submitScoreEl.textContent = "Submit";
+
+                    
+                    //Exit the quiz/timer.
+                    clearInterval(timeInterval);
                 }
 
                 
@@ -196,7 +224,7 @@ startQuizBtnEl.addEventListener("click", function() {
                 if (questionDisplay.textContent === "Commonly used datatypes DO NOT include?" && answer3BtnEl.textContent === "Alerts") {
                     console.log("Correct");
                     //timeLeft += 1; // Add a second for a correct answer as it will take one second to move to the next question
-                    score += 10; // Give user a 10+ score
+                    score = 10; // Give user a 10+ score
                     questionNumber = 1; // Move to the next question which is the second question
                     answerNumber = 1;
                     answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
@@ -208,7 +236,7 @@ startQuizBtnEl.addEventListener("click", function() {
                 else if (questionDisplay.textContent === "A very useful tool to debug arrays is:" && answer3BtnEl.textContent === "For loops") {
                     console.log("Correct");
                     //timeLeft += 1; // Add a second for a correct answer as it will take one second to move to the next question
-                    score += 10; // Give user a 10+ score
+                    score = 40; // Give user a 10+ score
                     questionNumber = 4; // Move to the next question which  is the fifth question
                     answerNumber =3;
                     answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
@@ -226,7 +254,7 @@ startQuizBtnEl.addEventListener("click", function() {
                 if (questionDisplay.textContent === "Arrays can be used to store the following" && answer4BtnEl.textContent === "All of the above") {
                     console.log("Correct");
                    // timeLeft += 1; // Add a second for a correct answer as it will take one second to move to the next question
-                    score += 10; // Give user a 10+ score
+                    score = 30; // Give user a 10+ score
                     //Game is overquestionNumber = 4; // Move to the next question
                     questionNumber = 3; // Move to the next question which is the fourth question
                     answerNumber = 2;
@@ -279,101 +307,3 @@ startQuizBtnEl.addEventListener("click", function() {
     */
 
 });
-
-function displayQuestions() {
-    
-        
-while (quizStatus){
-    quizStatus = true; // Re-initialize the status of the quiz.
-    score = 0; // Re-initialize score tracker.
-    var answer = ""; // Test prompt 
-
-   // answer = window.prompt("Commonly used datatypes DO NOT include?");
-    if (answer === "Alerts") {
-
-      console.log("Answered correctly, you get 10 points");
-      score += 10; // Add overall score.
-      console.log(score)
-    } else {
-        // Do nothing, move to next question
-        //break;
-        console.log("Answered incorrectly, you will lose 10 points");
-        score -= 10; // Add overall score.
-        console.log(score)
-    }
-
-    //answer = window.prompt("The condition statement if/else is enclosed with the following:");
-    if (answer === "Parentheses") {
-
-      console.log("Answered correctly, you get 10 points");
-        console.log("Answered incorrectly, you will lose 10 points");
-        score -= 10; // Add overall score.
-        console.log(score)
-    } else {
-        // Do nothing, move to next question
-        //break;
-        console.log("Answered incorrectly, you will lose 10 points");
-        score -= 10; // Add overall score.
-        console.log(score)
-    }
-
-
-   // answer = window.prompt("Arrays can be used to store the following");
-    if (answer === "All of the above") {
-
-      console.log("Answered correctly, you get 10 points");
-      score += 10;
-      console.log(score)
-    } else {
-        // Do nothing, move to next question
-        //break;
-        console.log("Answered incorrectly, you will lose 10 points");
-        score -= 10; // Add overall score.
-        console.log(score)
-    }
-
-
-   // answer = window.prompt("A very useful tool to debug arrays is:");
-    if (answer === "For loops") {
-
-      console.log("Answered correctly, you get 10 points");
-      score += 10;
-      console.log(score)
-    } else {
-        // Do nothing, move to next question
-        //break;
-        console.log("Answered incorrectly, you will lose 10 points");
-        score -= 10; // Add overall score.
-        console.log(score)
-    }
-
-
-   // answer = window.prompt("Strings must be enclosed with:");
-    if (answer === "Quotes") {
-
-      console.log("Strings must be enclosed with:");
-      score += 10;
-      console.log(score)
-    } else {
-        // Do nothing, move to next question
-        //break;
-        console.log("Answered incorrectly, you will lose 10 points");
-        score -= 10; // Add overall score.
-        console.log(score)
-    }
-
-console.log(questions.correct["Commonly used datatypes DO NOT include?"]);
-console.log(questions.correct["The condition statement if/else is enclosed with the following:"]);
-console.log(questions.correct["Arrays can be used to store the following"]);
-console.log(questions.correct["A very useful tool to debug arrays is:"]);
-console.log(questions.correct["Strings must be enclosed with:"]);
-//quizStatus = false;
-
-}
-    
-}
-
-
-
-
-
