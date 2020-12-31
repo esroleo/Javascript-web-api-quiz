@@ -74,10 +74,80 @@ var answersObject = { // Object that holds correct answers.
 
 htmlTimeLeft.textContent = timeLeft;
 
-viewHighScoresBtnEl.addEventListener("click", function() {
+viewHighScoresBtnEl.addEventListener("click", function() { // View high scores
 
-window.alert("Clicked");
+    var name = "";
+    var quizScores = []; //Array of scores
+    var result = 0;
+
+
+
+    
+            for (var i=0; i < localStorage.length; i++){
+                
+                quizScores = localStorage.getItem("esroleoQuiz")
+                quizScores = localStorage.getItem(localStorage.key(i));
+                
+                
+            }
+
+            result = Math.max(...quizScores);
+            console.log(result);
+
+
+            /*for (var a in localStorage) {
+
+                if (!quizScores){
+                    //do nothing
+                } else {
+                    quizScores = localStorage[a];
+                    Math.max(...quizScores);
+                    console.log(quizScores);
+                }
+                
+                //console.log("Max score was done by " + a + ' = ' + localStorage[a]);
+            }
+            */
+
+
 });
+
+submitScoreEl.addEventListener("click", function() { // Submit high scores
+    
+
+    var quizLocalStorage = "quiz";
+    var quizUserDetails = "";
+    var value = [];
+    
+    //If good input the value will be assign properly.
+    quizUserDetails = quizLocalStorage + enterInitialsTextArea.value 
+    value = [quizUserDetails,score]
+    //localStorage.setItem(quizUserDetails, value);
+    
+        
+    for (var i=0; i < localStorage.length; i++){
+        
+        var checkUser = "";
+        var checkUserValue = [];
+
+        // Assign value again
+        quizUserDetails = quizLocalStorage + enterInitialsTextArea.value;
+
+        checkUser = localStorage.getItem(quizUserDetails);
+        checkUserValue = checkUser.split(",");
+        
+        if ( (quizUserDetails == checkUserValue[0] && score == checkUserValue[1])) {
+            window.alert("Your score of " + score + " has been submitted in the past. The initial enter before was " + enterInitialsTextArea.value);
+            break;
+        }  else if (enterInitialsTextArea.value == "") {
+            window.alert("Please enter an initial");
+            break;
+        } else {
+            localStorage.setItem(quizUserDetails, value);
+            window.alert("Your score of " + score + " has been submitted!") 
+        }
+    }
+} );
 
 
 answer1BtnEl.addEventListener("mouseover", function() {
