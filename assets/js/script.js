@@ -266,6 +266,10 @@ startQuizBtnEl.addEventListener("click", function() {
                     
                     //Exit the quiz/timer.
                     clearInterval(timeInterval);
+                } else {
+                    answerCorrectWrong.style.display="";
+                    answerCorrectWrong.textContent = "Wrong!";
+                    answerCorrectWrong.style.borderTop = "solid #800080";
                 }
 
                 
@@ -295,6 +299,10 @@ startQuizBtnEl.addEventListener("click", function() {
                     answerCorrectWrong.textContent = "Correct!";
                     answerCorrectWrong.style.borderTop = "solid #800080";
                     answerCorrectWrongGrid.appendChild(answerCorrectWrong);
+                } else {
+                    answerCorrectWrong.style.display="";
+                    answerCorrectWrong.textContent = "Wrong!";
+                    answerCorrectWrong.style.borderTop = "solid #800080";
                 }
 
 
@@ -315,6 +323,10 @@ startQuizBtnEl.addEventListener("click", function() {
                     answerCorrectWrong.style.borderTop = "solid #800080";
                     answerCorrectWrongGrid.appendChild(answerCorrectWrong);
 
+                } else {
+                    answerCorrectWrong.style.display="";
+                    answerCorrectWrong.textContent = "Wrong!";
+                    answerCorrectWrong.style.borderTop = "solid #800080";
                 }
                 
             });
