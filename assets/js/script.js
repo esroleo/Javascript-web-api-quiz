@@ -107,9 +107,14 @@ submitScoreEl.addEventListener("click", function() { // Submit high scores
     //If good input the value will be assign properly.
     quizUserDetails = quizLocalStorage + enterInitialsTextArea.value 
     value = [quizUserDetails,highScore] // Create an array for validation
-    console.log(highScore);
-    
-    
+
+
+    // Add test entry @local storage in order to be able to get the lentgh of the local storage.
+    // If user clears the data at local storage the below code will not work unless there is at least on entry.
+    if (!localStorage.length) {
+        localStorage.setItem("test","test");
+    }
+       
         
     for (var i=0; i < localStorage.length; i++){
         
@@ -121,15 +126,22 @@ submitScoreEl.addEventListener("click", function() { // Submit high scores
 
         // Check if assigned value exist in the local storage
         checkUser = localStorage.getItem(quizUserDetails);
-
         // quizInitial + score will be checked against the input from the user to validate if exist already in local storage
-        checkUserValue = checkUser.split(",");
-        
-        
-        if ( (quizUserDetails == checkUserValue[0] && highScore == checkUserValue[1])) {
-            window.alert("Score of " + highScore + " has been submitted in the past by " + enterInitialsTextArea.value);
+   
+        if (checkUser == null) { // New user, no need to split
+            localStorage.setItem(quizUserDetails, value); // Value is equal to 
+            window.alert("Your score of " + highScore + " has been submitted!")
             break;
-        }  else if (enterInitialsTextArea.value == "") {
+        } else if (checkUser != null){
+            checkUserValue = checkUser.split(","); // Split since the ojbect exist in local storage
+        }  
+
+              
+        if ( quizUserDetails == checkUserValue[0] && highScore == checkUserValue[1] ) {
+            localStorage.setItem(quizUserDetails, value); // Value is equal to 
+            window.alert(highScore + " " + "is the latest entry for user initial " + enterInitialsTextArea.value + ". Entry will not be added.")
+            break; 
+        } else if (enterInitialsTextArea.value == "") {
             window.alert("Please enter an initial");
             break;
         } else {
@@ -137,6 +149,7 @@ submitScoreEl.addEventListener("click", function() { // Submit high scores
             window.alert("Your score of " + highScore + " has been submitted!")
             break; 
         }
+            
     }
 } );
 
