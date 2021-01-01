@@ -2,6 +2,8 @@ var quizStatus = true; // Know the status of the quiz. Quiz is not running = fal
 var questionNumber = 0; // Track the question answered.
 var answerNumber = 0; // Track next answers to show
 var score = 0; // Score tracker
+var scoreAdd = 1; // Score add fix for ticking timer.
+var scoreRemove = 0; // Score fix for ticking timer.
 var viewHighScoresBtnEl = document.getElementById('view-high-scores'); // View High Scores Btn El
 var startQuizBtnEl = document.getElementById('start-quiz'); // Start Quiz button Btn El
 var answer1BtnEl = document.getElementById('answer1'); // Start Quiz button Btn El
@@ -211,6 +213,7 @@ startQuizBtnEl.addEventListener("click", function() {
                     console.log("Correct");
                    // timeLeft += 1; // Add a second for a correct answer as it will take one second to move to the next question
                     score = 20; // Give user a 10+ score
+                    scoreAdd = 2; // Correct answer
                     questionNumber = 2; // Move to the next question which is the third questions
                     answerNumber = 4;
                     answerCorrectWrong.style.display="";
@@ -218,9 +221,55 @@ startQuizBtnEl.addEventListener("click", function() {
                     answerCorrectWrong.style.borderTop = "solid #800080";
                     answerCorrectWrongGrid.appendChild(answerCorrectWrong);
                 } else {
-                    answerCorrectWrong.style.display="";
-                    answerCorrectWrong.textContent = "Wrong!";
-                    answerCorrectWrong.style.borderTop = "solid #800080";
+
+                    //Assign wrong values based incorrect answers.
+
+                    switch(answer1BtnEl.textContent) {
+                        case "Strings":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            score = 0; // Give user a 10+ score
+                            questionNumber = 1; // Move to the next question which is the second question
+                            answerNumber = 1;
+                            break;
+                        case "Javascript":
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            score = 30; // Give user a 10+ score
+                            questionNumber = 4; // Move to the next question which is the second question
+                            answerNumber = 3;
+                            break;
+                        case "Number of strings":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            score = 0; // Give user a 10+ score
+                            questionNumber = 3; // Move to the next question which is the second question
+                            answerNumber = 2;
+                            break;
+                        case "Javascript":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            score = 0; // Give user a 10+ score
+                            questionNumber = 4; // Move to the next question which is the second question
+                            answerNumber = 3;
+                        break;
+                        case "Commas":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            //score = 0; // Give user a 10+ score
+                            //questionNumber = 4; // Move to the next question which is the second question
+                            //answerNumber = 3;
+                        break;
+                    }
                 }
       
 
@@ -232,6 +281,7 @@ startQuizBtnEl.addEventListener("click", function() {
                     console.log("Correct");
                     //timeLeft += 1; // Add a second for a correct answer as it will take one second to move to the next question
                     score = 50; // Give user a 10+ score
+                    scoreAdd = 5; // Correct answer
                     //questionNumber = 2; // Move to the next question
                     //game over
                     answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
@@ -260,10 +310,51 @@ startQuizBtnEl.addEventListener("click", function() {
                     //Exit the quiz/timer.
                     clearInterval(timeInterval);
                 } else {
-                    answerCorrectWrong.style.display="";
-                    answerCorrectWrong.textContent = "Wrong!";
-                    answerCorrectWrong.style.borderTop = "solid #800080";
-                }
+
+                    switch(answer2BtnEl.textContent) {
+                        case "Boolean":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            score = 0; // Give user a 10+ score
+                            questionNumber = 1; // Move to the next question which is the second question
+                            answerNumber = 1;
+                            break;
+                        case "Curly Brackets":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            score += 10; // Give user a 10+ score
+                            questionNumber = 2; // Move to the next question which is the second question
+                            answerNumber = 4;
+                            console.log(score);
+                            break;
+                        case "Other arrays":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            score = 0; // Give user a 10+ score
+                            questionNumber = 3; // Move to the next question which is the second question
+                            answerNumber = 2;
+                            break;
+                        case "Terminal/bash":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            score = 0; // Give user a 10+ score
+                            questionNumber = 4; // Move to the next question which is the second question
+                            answerNumber = 3;
+                            break;
+
+                            
+                    }
+                 }
+
+
 
                 
             });
@@ -274,18 +365,18 @@ startQuizBtnEl.addEventListener("click", function() {
                     console.log("Correct");
                     //timeLeft += 1; // Add a second for a correct answer as it will take one second to move to the next question
                     score = 10; // Give user a 10+ score
+                    scoreAdd = 1; // Correct answer.
                     questionNumber = 1; // Move to the next question which is the second question
                     answerNumber = 1;
                     answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
                     answerCorrectWrong.textContent = "Correct!";
                     answerCorrectWrong.style.borderTop = "solid #800080";
                     answerCorrectWrongGrid.appendChild(answerCorrectWrong);
-                }
-
-                else if (questionDisplay.textContent === "A very useful tool to debug arrays is:" && answer3BtnEl.textContent === "For loops") {
+                } else if (questionDisplay.textContent === "A very useful tool to debug arrays is:" && answer3BtnEl.textContent === "For loops") {
                     console.log("Correct");
                     //timeLeft += 1; // Add a second for a correct answer as it will take one second to move to the next question
                     score = 40; // Give user a 10+ score
+                    scoreAdd = 4; // Correct answer
                     questionNumber = 4; // Move to the next question which  is the fifth question
                     answerNumber =3;
                     answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
@@ -293,13 +384,30 @@ startQuizBtnEl.addEventListener("click", function() {
                     answerCorrectWrong.style.borderTop = "solid #800080";
                     answerCorrectWrongGrid.appendChild(answerCorrectWrong);
                 } else {
-                    answerCorrectWrong.style.display="";
-                    answerCorrectWrong.textContent = "Wrong!";
-                    answerCorrectWrong.style.borderTop = "solid #800080";
+
+                    switch(answer3BtnEl.textContent) {
+                        case "Booleans":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            score = 0; // Give user a 10+ score
+                            questionNumber = 3; // Move to the next question which is the second question
+                            answerNumber = 2;
+                            break;
+                        case "Quotes":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            //score = 0; // Give user a 10+ score
+                            //questionNumber = 4; // Move to the next question which is the second question
+                            //answerNumber = 3;
+                        break;
+                    }
+
                 }
 
-
-                
             });
 
             answer4BtnEl.addEventListener("click", function() {
@@ -308,6 +416,7 @@ startQuizBtnEl.addEventListener("click", function() {
                     console.log("Correct");
                    // timeLeft += 1; // Add a second for a correct answer as it will take one second to move to the next question
                     score = 30; // Give user a 10+ score
+                    scoreAdd = 3; // Correct answer
                     //Game is overquestionNumber = 4; // Move to the next question
                     questionNumber = 3; // Move to the next question which is the fourth question
                     answerNumber = 2;
@@ -317,9 +426,47 @@ startQuizBtnEl.addEventListener("click", function() {
                     answerCorrectWrongGrid.appendChild(answerCorrectWrong);
 
                 } else {
-                    answerCorrectWrong.style.display="";
-                    answerCorrectWrong.textContent = "Wrong!";
-                    answerCorrectWrong.style.borderTop = "solid #800080";
+
+                    switch(answer4BtnEl.textContent) {
+                        case "Numbers":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            score = 0; // Give user a 10+ score
+                            questionNumber = 1; // Move to the next question which is the second question
+                            answerNumber = 1;
+                            break;
+                        case "Square Brackets":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            score = 0; // Give user a 10+ score
+                            questionNumber = 2; // Move to the next question which is the second question
+                            answerNumber = 4;
+                            break;
+                        case "Console.log":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            score = 0; // Give user a 10+ score
+                            questionNumber = 4; // Move to the next question which is the second question
+                            answerNumber = 3;
+                        break;
+                        case "Parentheses":
+                            console.log("Inside the case now");
+                            answerCorrectWrong.style.display="";
+                            answerCorrectWrong.textContent = "Wrong!";
+                            answerCorrectWrong.style.borderTop = "solid #800080";
+                            //score = 0; // Give user a 10+ score
+                            //questionNumber = 4; // Move to the next question which is the second question
+                            //answerNumber = 3;
+                        break;
+                        
+                    }
+                 
                 }
                 
             });
