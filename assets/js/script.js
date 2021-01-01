@@ -268,6 +268,26 @@ startQuizBtnEl.addEventListener("click", function() {
                             //score = 0; // Give user a 10+ score
                             //questionNumber = 4; // Move to the next question which is the second question
                             //answerNumber = 3;
+                            questionNumber = 0; // Game is over, no more questions to show.
+                            answerNumber = 0; // Game is over, no more answers to show.
+                            console.log("I'm here" + timeInterval);
+                            answer1BtnEl.style.display = 'none';
+                            answer2BtnEl.style.display = 'none';
+                            answer3BtnEl.style.display = 'none';
+                            answer4BtnEl.style.display = 'none';
+                            answerCorrectWrong.style.display='none'; // When time is over correct or wrong will go away.
+                            startQuizBtnEl.style.display = 'none'; // Remove Start Quiz button.
+                            //answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
+                            questionDisplay.textContent = "You have finished the quiz!";
+                            finalScoreDisplay.style.display = ""; // Allow display for final score
+                            enterInitials.style.display = ""; // Display Message Enter initials
+                            enterInitialsTextArea.style.display="";  // Capture user score once submitted is clicked.
+                            finalScoreDisplay.textContent = "Your final score is: " + score;
+                            enterInitials.textContent = "Enter initials: "
+                            submitScoreEl.style.display = "";
+                            submitScoreEl.textContent = "Submit";                   
+                            //Exit the quiz/timer.
+                            clearInterval(timeInterval);
                         break;
                     }
                 }
@@ -403,6 +423,26 @@ startQuizBtnEl.addEventListener("click", function() {
                             //score = 0; // Give user a 10+ score
                             //questionNumber = 4; // Move to the next question which is the second question
                             //answerNumber = 3;
+                            questionNumber = 0; // Game is over, no more questions to show.
+                            answerNumber = 0; // Game is over, no more answers to show.
+                            console.log("I'm here" + timeInterval);
+                            answer1BtnEl.style.display = 'none';
+                            answer2BtnEl.style.display = 'none';
+                            answer3BtnEl.style.display = 'none';
+                            answer4BtnEl.style.display = 'none';
+                            answerCorrectWrong.style.display='none'; // When time is over correct or wrong will go away.
+                            startQuizBtnEl.style.display = 'none'; // Remove Start Quiz button.
+                            //answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
+                            questionDisplay.textContent = "You have finished the quiz!";
+                            finalScoreDisplay.style.display = ""; // Allow display for final score
+                            enterInitials.style.display = ""; // Display Message Enter initials
+                            enterInitialsTextArea.style.display="";  // Capture user score once submitted is clicked.
+                            finalScoreDisplay.textContent = "Your final score is: " + score;
+                            enterInitials.textContent = "Enter initials: "
+                            submitScoreEl.style.display = "";
+                            submitScoreEl.textContent = "Submit";                   
+                            //Exit the quiz/timer.
+                            clearInterval(timeInterval);
                         break;
                     }
 
@@ -463,6 +503,26 @@ startQuizBtnEl.addEventListener("click", function() {
                             //score = 0; // Give user a 10+ score
                             //questionNumber = 4; // Move to the next question which is the second question
                             //answerNumber = 3;
+                            questionNumber = 0; // Game is over, no more questions to show.
+                            answerNumber = 0; // Game is over, no more answers to show.
+                            console.log("I'm here" + timeInterval);
+                            answer1BtnEl.style.display = 'none';
+                            answer2BtnEl.style.display = 'none';
+                            answer3BtnEl.style.display = 'none';
+                            answer4BtnEl.style.display = 'none';
+                            answerCorrectWrong.style.display='none'; // When time is over correct or wrong will go away.
+                            startQuizBtnEl.style.display = 'none'; // Remove Start Quiz button.
+                            //answerCorrectWrong.style.display=""; // Enables text content on correct and wrong answers
+                            questionDisplay.textContent = "You have finished the quiz!";
+                            finalScoreDisplay.style.display = ""; // Allow display for final score
+                            enterInitials.style.display = ""; // Display Message Enter initials
+                            enterInitialsTextArea.style.display="";  // Capture user score once submitted is clicked.
+                            finalScoreDisplay.textContent = "Your final score is: " + score;
+                            enterInitials.textContent = "Enter initials: "
+                            submitScoreEl.style.display = "";
+                            submitScoreEl.textContent = "Submit";                   
+                            //Exit the quiz/timer.
+                            clearInterval(timeInterval);
                         break;
                         
                     }
