@@ -155,7 +155,7 @@ submitScoreEl.addEventListener("click", function() { // Submit high scores
         } else if ( quizUserDetails == checkUserValue[0] && highScore > checkUserValue[1] ) { 
             // New high score submitted!
             localStorage.setItem(quizUserDetails, value); // Value is equal to 
-            window.alert("New score of " + highScore + " has been submitted!")
+            window.alert("New high score of " + highScore + " has been submitted!.\nYour previous score was " + checkUserValue[1])
             break; 
         } else { // New entry all together
             localStorage.setItem(quizUserDetails, value); // Value is equal to 
