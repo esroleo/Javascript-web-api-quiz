@@ -254,7 +254,7 @@ startQuizBtnEl.addEventListener("click", function() {
                             answerCorrectWrong.style.display="";
                             answerCorrectWrong.textContent = "Wrong!";
                             answerCorrectWrong.style.borderTop = "solid #800080";
-                            answerCorrectWrongGrid.appendChild(answerCorrectWrong);
+                            
                             score = 1; // Give user a 10+ score
                             questionNumber = 1; // Move to the next question which is the second question
                             answerNumber = 1;
@@ -264,7 +264,7 @@ startQuizBtnEl.addEventListener("click", function() {
                             answerCorrectWrong.style.display="";
                             answerCorrectWrong.textContent = "Wrong!";
                             answerCorrectWrong.style.borderTop = "solid #800080";
-                            answerCorrectWrongGrid.appendChild(answerCorrectWrong);
+                            
                             score = 1; // Give user a 10+ score
                             questionNumber = 3; // Move to the next question which is the second question
                             answerNumber = 2;
@@ -274,7 +274,7 @@ startQuizBtnEl.addEventListener("click", function() {
                             answerCorrectWrong.style.display="";
                             answerCorrectWrong.textContent = "Wrong!";
                             answerCorrectWrong.style.borderTop = "solid #800080";
-                            answerCorrectWrongGrid.appendChild(answerCorrectWrong);
+                            
                             score = 1; // Give user a 10+ score
                             questionNumber = 4; // Move to the next question which is the second question
                             answerNumber = 3;
@@ -359,7 +359,7 @@ startQuizBtnEl.addEventListener("click", function() {
                             answerCorrectWrong.style.display="";
                             answerCorrectWrong.textContent = "Wrong!";
                             answerCorrectWrong.style.borderTop = "solid #800080";
-                            answerCorrectWrongGrid.appendChild(answerCorrectWrong);
+                          
                             score = 1; // Give user a 10+ score
                             questionNumber = 1; // Move to the next question which is the second question
                             answerNumber = 1;
@@ -369,7 +369,7 @@ startQuizBtnEl.addEventListener("click", function() {
                             answerCorrectWrong.style.display="";
                             answerCorrectWrong.textContent = "Wrong!";
                             answerCorrectWrong.style.borderTop = "solid #800080";
-                            answerCorrectWrongGrid.appendChild(answerCorrectWrong);
+                         
                             score = 1; // Give user a 10+ score
                             questionNumber = 2; // Move to the next question which is the second question
                             answerNumber = 4;
@@ -380,7 +380,6 @@ startQuizBtnEl.addEventListener("click", function() {
                             answerCorrectWrong.style.display="";
                             answerCorrectWrong.textContent = "Wrong!";
                             answerCorrectWrong.style.borderTop = "solid #800080";
-                            answerCorrectWrongGrid.appendChild(answerCorrectWrong);
                             score = 1; // Give user a 10+ score
                             questionNumber = 3; // Move to the next question which is the second question
                             answerNumber = 2;
@@ -390,7 +389,6 @@ startQuizBtnEl.addEventListener("click", function() {
                             answerCorrectWrong.style.display="";
                             answerCorrectWrong.textContent = "Wrong!";
                             answerCorrectWrong.style.borderTop = "solid #800080";
-                            answerCorrectWrongGrid.appendChild(answerCorrectWrong);
                             score = 1; // Give user a 10+ score
                             questionNumber = 4; // Move to the next question which is the second question
                             answerNumber = 3;
@@ -430,7 +428,6 @@ startQuizBtnEl.addEventListener("click", function() {
                             answerCorrectWrong.style.display="";
                             answerCorrectWrong.textContent = "Wrong!";
                             answerCorrectWrong.style.borderTop = "solid #800080";
-                            answerCorrectWrongGrid.appendChild(answerCorrectWrong);
                             score = 1; // Give user a 10+ score
                             questionNumber = 2; // Move to the next question which is the second question
                             answerNumber = 4;
@@ -444,7 +441,6 @@ startQuizBtnEl.addEventListener("click", function() {
                             answerCorrectWrong.style.display="";
                             answerCorrectWrong.textContent = "Wrong!";
                             answerCorrectWrong.style.borderTop = "solid #800080";
-                            answerCorrectWrongGrid.appendChild(answerCorrectWrong);
                             score = 1; // Give user a 10+ score
                             questionNumber = 3; // Move to the next question which is the second question
                             answerNumber = 2;
@@ -503,7 +499,6 @@ startQuizBtnEl.addEventListener("click", function() {
                             answerCorrectWrong.style.display="";
                             answerCorrectWrong.textContent = "Wrong!";
                             answerCorrectWrong.style.borderTop = "solid #800080";
-                            answerCorrectWrongGrid.appendChild(answerCorrectWrong);
                             score = 1; // Give user a 10+ score
                             questionNumber = 1; // Move to the next question which is the second question
                             answerNumber = 1;
@@ -513,7 +508,6 @@ startQuizBtnEl.addEventListener("click", function() {
                             answerCorrectWrong.style.display="";
                             answerCorrectWrong.textContent = "Wrong!";
                             answerCorrectWrong.style.borderTop = "solid #800080";
-                            answerCorrectWrongGrid.appendChild(answerCorrectWrong);
                             score = 1; // Give user a 10+ score
                             questionNumber = 2; // Move to the next question which is the second question
                             answerNumber = 4;
@@ -523,7 +517,6 @@ startQuizBtnEl.addEventListener("click", function() {
                             answerCorrectWrong.style.display="";
                             answerCorrectWrong.textContent = "Wrong!";
                             answerCorrectWrong.style.borderTop = "solid #800080";
-                            answerCorrectWrongGrid.appendChild(answerCorrectWrong);
                             score = 1; // Give user a 10+ score
                             questionNumber = 4; // Move to the next question which is the second question
                             answerNumber = 3;
@@ -533,7 +526,6 @@ startQuizBtnEl.addEventListener("click", function() {
                             answerCorrectWrong.style.display="";
                             answerCorrectWrong.textContent = "Wrong!";
                             answerCorrectWrong.style.borderTop = "solid #800080";
-                            answerCorrectWrongGrid.appendChild(answerCorrectWrong);
                             score = 1; // Give user a 10+ score
                             //questionNumber = 4; // Move to the next question which is the second question
                             //answerNumber = 3;
