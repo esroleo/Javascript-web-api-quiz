@@ -302,39 +302,9 @@ header {
 
     #questionDisplay {
         grid-column: 2 / span 2;
-        
         font-size: 15px;
     }
 
-    
-    #answer1 {
-      
-        grid-row: 5 / span 1;
-       
-    }
-    
-    #answer2 {
-    
-        grid-row: 6 / span 1;
-       
-    
-    }
-    
-    #answer3 {
-       
-        grid-row: 7 / span 1;
-    }
-    
-    #answer4 {
-      
-        grid-row: 8 / span 1;
-    }
-    
-    #answer4 {
-    
-        grid-row: 9 / span 1;
-    }
-
-    
+   
 
   }
