@@ -311,6 +311,37 @@ header {
    /* This will be applied on any screen smaller than 575px */
 @media screen and  (max-width: 575px) {
 
+    #answer1:hover{
+        
+        background-color: purple;
+        
+    }
+
+    #answer2:hover{
+        
+        background-color: purple;
+    
+    }
+
+    #answer3:hover{
+        
+        background-color: purple;
+    
+    }
+
+    #answer4:hover{
+        
+        background-color: purple;
+    
+    }
+
+    #submitScore:hover{
+        
+        background-color: purple;
+    
+    }
+
+
     #mainDiv {
         margin-left: 5%;
         margin-right: 5%;
