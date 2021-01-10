@@ -248,6 +248,29 @@ header {
 /* This will be applied on any screen smaller than 768px */
 @media screen and (max-width: 768px) {
 
+    	/* Turn off animations for small devices.*/
+	* {		
+		/*CSS transitions*/
+		-o-transition-property: none !important;
+		-moz-transition-property: none !important;
+		-ms-transition-property: none !important;
+		-webkit-transition-property: none !important;
+		transition-property: none !important;
+		/*CSS transforms*/
+		-o-transform: none !important;
+		-moz-transform: none !important;
+		-ms-transform: none !important;
+		-webkit-transform: none !important;
+		transform: none !important;
+		/*CSS animations*/
+		-webkit-animation: none !important;
+		-moz-animation: none !important;
+		-o-animation: none !important;
+		-ms-animation: none !important;
+		animation: none !important;
+	}
+
+
     #questionDisplay {
         font-size: 25px;
     }
@@ -269,13 +292,9 @@ header {
         grid-column: 2 / span 2;
     }
     
+  
 
-<<<<<<< HEAD
-    
-=======
->>>>>>> develop
-
-  }
+}
 
 
    /* This will be applied on any screen smaller than 575px */
