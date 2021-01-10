@@ -134,23 +134,37 @@ submitScoreEl.addEventListener("click", function() { // Submit high scores
             break;
         } else if (checkUser != null){
             checkUserValue = checkUser.split(","); // Split since the ojbect exist in local storage
+           
+        
         }  
+
+
 
               
         if ( quizUserDetails == checkUserValue[0] && highScore == checkUserValue[1] ) {
-            localStorage.setItem(quizUserDetails, value); // Value is equal to 
-            window.alert(highScore + " " + "is the latest entry for user initial " + enterInitialsTextArea.value + ". Entry will not be added.")
-            break; 
+
+       
+        // Only insert if the current highScore is higher, 
+        // otherwise let the user know they had a higher score alreay
+        localStorage.setItem(quizUserDetails, value); // Value is equal to 
+        window.alert(highScore + " " + "is the latest entry for user initial " + enterInitialsTextArea.value + ". Entry will not be added.")
+        break; 
         } else if (enterInitialsTextArea.value == "") {
             window.alert("Please enter an initial");
             break;
-        } else {
+        } else if ( quizUserDetails == checkUserValue[0] && highScore > checkUserValue[1] ) { 
+            // New high score submitted!
+            localStorage.setItem(quizUserDetails, value); // Value is equal to 
+            window.alert("New score of " + highScore + " has been submitted!")
+            break; 
+        } else { // New entry all together
             localStorage.setItem(quizUserDetails, value); // Value is equal to 
             window.alert("Your score of " + highScore + " has been submitted!")
-            break; 
+            break;
         }
-            
+                
     }
+    
 } );
 
 
