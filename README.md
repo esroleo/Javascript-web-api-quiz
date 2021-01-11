@@ -36,7 +36,7 @@ https://esroleo.github.io/web-api-challenge-code-quiz/
 ## 3. Usage Tips
 
 
-### Follow the criteria instructions to generate a password matching the criteria selected.
+### Follow the criteria instructions to finish the quiz
 
 Steps to navidate the quiz.
 
@@ -78,6 +78,11 @@ Steps to navidate the quiz.
 ![nav-menu](./assets/images/new-high-score.JPG?raw=true "new-high-score")
 
 ![nav-menu](./assets/images/lower-score-not-enter-system.JPG?raw=true "lower-score-not-enter-system")
+
+### Click on View High Scores to check your quiz score!
+
+![nav-menu](./assets/images/view-high-scores.JPG?raw=true "view-high-scores")
+
 
 <a name="contributing"></a>
 ## 4. Contributing
