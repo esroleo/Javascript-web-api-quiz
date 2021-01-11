@@ -81,7 +81,7 @@ Steps to navidate the quiz.
 
 ### Click on View High Scores to check your quiz score!
 
-![nav-menu](./assets/images/view-high-scores.JPG?raw=true "view-high-scores")
+![nav-menu](./assets/images/view-high-scores-full-screen.JPG?raw=true "view-high-scores-full-screen")
 
 
 <a name="contributing"></a>
